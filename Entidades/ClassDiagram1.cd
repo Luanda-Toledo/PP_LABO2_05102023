@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Entidades.Numeracion" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAJAAAAAAAAAAAAAAQAEAgAABAAAAAAAAAAAAiA=</HashCode>
+      <FileName>Numeracion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SistemaBinario" Collapsed="true">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAJAAAAAAAAACAEAAAAAAAAAAAAAAAAAAABAAIA=</HashCode>
+      <FileName>SistemaBinario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SistemaDecimal" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAJAAAAAAAAAAAAAAAgAQAAAAAAAAAIAAAAAAAQ=</HashCode>
+      <FileName>SistemaDecimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SistemaOctal" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAJAAAAAAAAAACAAECAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SistemaOctal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Calculadora" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAFAAgAAAAAJAAAAABIAIAAQAAAAAAAAgAIIAIABQ=</HashCode>
+      <FileName>Calculadora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Entidades.ESistema" Collapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

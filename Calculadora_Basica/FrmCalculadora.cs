@@ -1,125 +1,112 @@
 using Entidades;
-using Microsoft.VisualBasic.Logging;
 
 namespace Calculadora_Basica
 {
-    // Eventos de los componentes, y especificaciones de lo que ocurre en cada evento 
-    public partial class FrmCalculadora : Form // Hereda de form
-    {
-        // Atributos
-        private string primerNumero;
-        private string operadorSeleccionado;
-        private string segundoNumero;
-        private ESistema sistemaSeleccionado;
-        private Numeracion? resultadoOperacion;
-        private bool actualizoSistema;
-        private Calculadora calculadora;
 
+    public partial class FrmCalculadora : Form
+    {
+
+        private Calculadora calculadora;
         public FrmCalculadora()
         {
             InitializeComponent();
-            this.primerNumero = string.Empty;
-            this.operadorSeleccionado = "+";
-            this.segundoNumero = string.Empty;
-            this.sistemaSeleccionado = ESistema.Decimal;
-            this.actualizoSistema = false;
-            this.calculadora = new Calculadora("Nombre y Apellido");
-        }
-        //Los atributos de tipo numeración, almacenaran un objeto en sistema decimal.
-        //Cada será una instancia correspondiente a los valores obtenidos desde las cajas de texto.
-
-        private void primerOperador_TextChanged(object sender, EventArgs e)
-        {
-            primerNumero = primerOperador.Text;
+            this.calculadora = new Calculadora("Lu");
         }
 
-        private void operacion_SelectedIndexChanged(object sender, EventArgs e)
+        private void FrmCalculadora_Load(object sender, EventArgs e)
         {
-            if (operacion.SelectedIndex == -1)
-            {
-                operadorSeleccionado = "+";
-            }
-            else
-            {
-                operadorSeleccionado = operacion.SelectedItem.ToString();
-            }
+            this.cmbOperacion.DataSource = new char[] { '+', '-', '*', '/' };
         }
 
-        private void segundoOperador_TextChanged(object sender, EventArgs e)
+        private void txtPrimerOperador_TextChanged(object sender, EventArgs e)
         {
-            segundoNumero = segundoOperador.Text;
+
         }
 
-        private void binario_sist_CheckedChanged(object sender, EventArgs e)
+        private void rdbDecimal_CheckedChanged(object sender, EventArgs e)
         {
-            sistemaSeleccionado = ESistema.Binario;
-            setResultado();
+            Calculadora.Sistema = ESistema.Decimal;
         }
 
-        private void decimal_sist_CheckedChanged(object sender, EventArgs e)
+        private void rdbBinario_CheckedChanged(object sender, EventArgs e)
         {
-            sistemaSeleccionado = ESistema.Decimal;
-            setResultado();
+            Calculadora.Sistema = ESistema.Binario;
         }
 
-        private void operar_Click(object sender, EventArgs e)
+        private void txtSegundoOperador_TextChanged(object sender, EventArgs e)
         {
-            actualizoSistema = true;
-            setResultado();
+
         }
 
-        private void limpiar_Click(object sender, EventArgs e)
+        private void btnOperar_Click(object sender, EventArgs e)
         {
-            primerOperador.Text = "";
-            segundoOperador.Text = "";
-            resultado.Text = "Resultado: ";
-            decimal_sist.Checked = true;
-            operacion.SelectedIndex = -1;
-            resultadoOperacion = null;
-            actualizoSistema = false;
+            char operador;
+            calculadora.PrimerOperando =
+            this.GetOperando(this.txtPrimerOperando.Text);
+            calculadora.SegundoOperando =
+            this.GetOperando(this.txtSegundoOperando.Text);
+            operador = (char)this.cmbOperacion.SelectedItem;
+            this.calculadora.Calcular(operador);
+            this.calculadora.ActualizaHistorialDeOperaciones(operador)
+            ;
+            this.lblResultado.Text = $"RESULTADO: {calculadora.Resultado.Valor}";
+            this.MostrarHistorial();
+
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.calculadora.EliminarHistorialDeOperaciones();
+            this.txtPrimerOperando.Text = string.Empty;
+            this.txtSegundoOperando.Text = string.Empty;
+            this.lblResultado.Text = $"RESULTADO: ";
+            this.MostrarHistorial();
         }
 
         private void setResultado()
         {
-            if (actualizoSistema)
-            {
-                // Crear objetos Numeracion a partir de los valores ingresados en los cuadros de texto
-                Numeracion num1 = new Numeracion(primerNumero, ESistema.Decimal);
-                Numeracion num2 = new Numeracion(segundoNumero, ESistema.Decimal);
 
-                char operador = operadorSeleccionado[0];
-
-                Calculadora calculadora = new Calculadora(num1, num2);
-
-                resultadoOperacion = new Calculadora(char operador);
-
-                resultado.Text = "El resultado es: " + CambiarSistemaDeNumeracion(resultadoOperacion);
-            }
         }
 
-        private void cerrar_Click(object sender, EventArgs e)
+        private Numeracion GetOperando(string value)
         {
-            this.Close();
+            if (Calculadora.Sistema == ESistema.Binario)
+            {
+                return new SistemaBinario(value);
+            }
+            return new SistemaDecimal(value);
+        }
+
+        private void MostrarHistorial()
+        {
+            this.lstHistorial.DataSource = null;
+            this.lstHistorial.DataSource =
+            this.calculadora.Operaciones;
         }
 
         private void FrmCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea cerrar la calculadora?", "Confirmar Cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Si el usuario elige "No", cancelar el cierre del formulario
-            if (resultado == DialogResult.No)
+            DialogResult result = MessageBox.Show("Desea cerrar la calculadora?", "Cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
                 e.Cancel = true;
             }
         }
 
-        private void FrmCalculadora_Load(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            //this.cmbOperacion.DataSource = new char[] { '+', '-', '*', '/' };
+            this.Close();
         }
 
-        private void tipoSistema_Enter(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmbOperacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

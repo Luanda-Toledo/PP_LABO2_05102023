@@ -1,7 +1,10 @@
-﻿namespace Calculadora_Basica
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace Calculadora_Basica
 {
-    // La parte estetica (ej propiedaddes: color, title, etc)
-    partial class FrmCalculadora
+    partial class FrmCalculadora : Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,167 +33,177 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalculadora));
-            resultado = new Label();
-            tipoSistema = new GroupBox();
-            binario_sist = new RadioButton();
-            decimal_sist = new RadioButton();
-            primerOperador = new TextBox();
-            segundoOperador = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            operar = new Button();
-            cerrar = new Button();
-            limpiar = new Button();
-            operacion = new ComboBox();
-            tipoSistema.SuspendLayout();
+            lblPrimerOperador = new Label();
+            lblSegundoOperador = new Label();
+            lblOperacion = new Label();
+            txtPrimerOperando = new TextBox();
+            txtSegundoOperando = new TextBox();
+            cmbOperacion = new ComboBox();
+            btnOperar = new Button();
+            btnLimpiar = new Button();
+            btnCerrar = new Button();
+            lblResultado = new Label();
+            grpSistema = new GroupBox();
+            rdbOctal = new RadioButton();
+            rdbBinario = new RadioButton();
+            rdbDecimal = new RadioButton();
+            lstHistorial = new ListBox();
+            grpSistema.SuspendLayout();
             SuspendLayout();
             // 
-            // resultado
+            // lblPrimerOperador
             // 
-            resources.ApplyResources(resultado, "resultado");
-            resultado.ForeColor = Color.FromArgb(64, 64, 64);
-            resultado.Name = "resultado";
+            resources.ApplyResources(lblPrimerOperador, "lblPrimerOperador");
+            lblPrimerOperador.Name = "lblPrimerOperador";
             // 
-            // tipoSistema
+            // lblSegundoOperador
             // 
-            tipoSistema.AccessibleRole = AccessibleRole.TitleBar;
-            tipoSistema.BackColor = Color.PapayaWhip;
-            resources.ApplyResources(tipoSistema, "tipoSistema");
-            tipoSistema.Controls.Add(binario_sist);
-            tipoSistema.Controls.Add(decimal_sist);
-            tipoSistema.Cursor = Cursors.Hand;
-            tipoSistema.FlatStyle = FlatStyle.Flat;
-            tipoSistema.ForeColor = SystemColors.ControlText;
-            tipoSistema.Name = "tipoSistema";
-            tipoSistema.TabStop = false;
-            tipoSistema.UseWaitCursor = true;
-            tipoSistema.Enter += tipoSistema_Enter;
+            resources.ApplyResources(lblSegundoOperador, "lblSegundoOperador");
+            lblSegundoOperador.Name = "lblSegundoOperador";
             // 
-            // binario_sist
+            // lblOperacion
             // 
-            resources.ApplyResources(binario_sist, "binario_sist");
-            binario_sist.Name = "binario_sist";
-            binario_sist.UseVisualStyleBackColor = true;
-            binario_sist.UseWaitCursor = true;
-            binario_sist.CheckedChanged += binario_sist_CheckedChanged;
+            resources.ApplyResources(lblOperacion, "lblOperacion");
+            lblOperacion.Name = "lblOperacion";
             // 
-            // decimal_sist
+            // txtPrimerOperando
             // 
-            resources.ApplyResources(decimal_sist, "decimal_sist");
-            decimal_sist.Checked = true;
-            decimal_sist.Name = "decimal_sist";
-            decimal_sist.TabStop = true;
-            decimal_sist.UseVisualStyleBackColor = true;
-            decimal_sist.UseWaitCursor = true;
-            decimal_sist.CheckedChanged += decimal_sist_CheckedChanged;
+            txtPrimerOperando.BackColor = Color.FromArgb(162, 192, 255);
+            resources.ApplyResources(txtPrimerOperando, "txtPrimerOperando");
+            txtPrimerOperando.Name = "txtPrimerOperando";
+            txtPrimerOperando.TextChanged += txtPrimerOperador_TextChanged;
             // 
-            // primerOperador
+            // txtSegundoOperando
             // 
-            primerOperador.BackColor = SystemColors.Info;
-            resources.ApplyResources(primerOperador, "primerOperador");
-            primerOperador.Name = "primerOperador";
-            primerOperador.TextChanged += primerOperador_TextChanged;
+            txtSegundoOperando.BackColor = Color.FromArgb(162, 192, 255);
+            resources.ApplyResources(txtSegundoOperando, "txtSegundoOperando");
+            txtSegundoOperando.Name = "txtSegundoOperando";
+            txtSegundoOperando.TextChanged += txtSegundoOperador_TextChanged;
             // 
-            // segundoOperador
+            // cmbOperacion
             // 
-            segundoOperador.BackColor = SystemColors.Info;
-            resources.ApplyResources(segundoOperador, "segundoOperador");
-            segundoOperador.Name = "segundoOperador";
-            segundoOperador.TextChanged += segundoOperador_TextChanged;
+            cmbOperacion.BackColor = Color.FromArgb(162, 192, 255);
+            resources.ApplyResources(cmbOperacion, "cmbOperacion");
+            cmbOperacion.FormattingEnabled = true;
+            cmbOperacion.Name = "cmbOperacion";
+            cmbOperacion.SelectedIndexChanged += cmbOperacion_SelectedIndexChanged;
             // 
-            // label2
+            // btnOperar
             // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
+            btnOperar.BackColor = Color.FromArgb(192, 255, 192);
+            resources.ApplyResources(btnOperar, "btnOperar");
+            btnOperar.ForeColor = Color.Black;
+            btnOperar.Name = "btnOperar";
+            btnOperar.UseVisualStyleBackColor = false;
+            btnOperar.Click += btnOperar_Click;
             // 
-            // label3
+            // btnLimpiar
             // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
+            btnLimpiar.BackColor = Color.FromArgb(192, 255, 255);
+            resources.ApplyResources(btnLimpiar, "btnLimpiar");
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // label4
+            // btnCerrar
             // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            resources.ApplyResources(btnCerrar, "btnCerrar");
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
-            // operar
+            // lblResultado
             // 
-            operar.BackColor = Color.FromArgb(192, 255, 192);
-            resources.ApplyResources(operar, "operar");
-            operar.Name = "operar";
-            operar.UseVisualStyleBackColor = false;
-            operar.Click += operar_Click;
+            resources.ApplyResources(lblResultado, "lblResultado");
+            lblResultado.Name = "lblResultado";
             // 
-            // cerrar
+            // grpSistema
             // 
-            cerrar.BackColor = Color.MistyRose;
-            resources.ApplyResources(cerrar, "cerrar");
-            cerrar.Name = "cerrar";
-            cerrar.UseVisualStyleBackColor = false;
-            cerrar.Click += cerrar_Click;
+            grpSistema.BackColor = Color.FromArgb(162, 192, 255);
+            grpSistema.Controls.Add(rdbOctal);
+            grpSistema.Controls.Add(rdbBinario);
+            grpSistema.Controls.Add(rdbDecimal);
+            resources.ApplyResources(grpSistema, "grpSistema");
+            grpSistema.Name = "grpSistema";
+            grpSistema.TabStop = false;
             // 
-            // limpiar
+            // rdbOctal
             // 
-            limpiar.BackColor = SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(limpiar, "limpiar");
-            limpiar.Name = "limpiar";
-            limpiar.UseVisualStyleBackColor = false;
-            limpiar.Click += limpiar_Click;
+            resources.ApplyResources(rdbOctal, "rdbOctal");
+            rdbOctal.Name = "rdbOctal";
+            rdbOctal.TabStop = true;
+            rdbOctal.UseVisualStyleBackColor = true;
+            rdbOctal.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // operacion
+            // rdbBinario
             // 
-            operacion.BackColor = SystemColors.Info;
-            operacion.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(operacion, "operacion");
-            operacion.FormattingEnabled = true;
-            operacion.Items.AddRange(new object[] { resources.GetString("operacion.Items"), resources.GetString("operacion.Items1"), resources.GetString("operacion.Items2"), resources.GetString("operacion.Items3") });
-            operacion.Name = "operacion";
-            operacion.SelectedIndexChanged += operacion_SelectedIndexChanged;
+            resources.ApplyResources(rdbBinario, "rdbBinario");
+            rdbBinario.Name = "rdbBinario";
+            rdbBinario.UseVisualStyleBackColor = true;
+            rdbBinario.CheckedChanged += rdbBinario_CheckedChanged;
+            // 
+            // rdbDecimal
+            // 
+            resources.ApplyResources(rdbDecimal, "rdbDecimal");
+            rdbDecimal.Checked = true;
+            rdbDecimal.Name = "rdbDecimal";
+            rdbDecimal.TabStop = true;
+            rdbDecimal.UseVisualStyleBackColor = true;
+            rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
+            // 
+            // lstHistorial
+            // 
+            lstHistorial.BackColor = Color.FromArgb(162, 192, 255);
+            lstHistorial.FormattingEnabled = true;
+            resources.ApplyResources(lstHistorial, "lstHistorial");
+            lstHistorial.Name = "lstHistorial";
             // 
             // FrmCalculadora
             // 
-            AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
-            Controls.Add(operacion);
-            Controls.Add(limpiar);
-            Controls.Add(cerrar);
-            Controls.Add(operar);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(segundoOperador);
-            Controls.Add(primerOperador);
-            Controls.Add(tipoSistema);
-            Controls.Add(resultado);
+            BackColor = Color.FromArgb(162, 192, 215);
+            Controls.Add(lstHistorial);
+            Controls.Add(grpSistema);
+            Controls.Add(lblResultado);
+            Controls.Add(btnCerrar);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnOperar);
+            Controls.Add(cmbOperacion);
+            Controls.Add(txtSegundoOperando);
+            Controls.Add(txtPrimerOperando);
+            Controls.Add(lblOperacion);
+            Controls.Add(lblSegundoOperador);
+            Controls.Add(lblPrimerOperador);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmCalculadora";
             FormClosing += FrmCalculadora_FormClosing;
             Load += FrmCalculadora_Load;
-            tipoSistema.ResumeLayout(false);
-            tipoSistema.PerformLayout();
+            grpSistema.ResumeLayout(false);
+            grpSistema.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label resultado;
-        private GroupBox tipoSistema;
-        private RadioButton binario_sist;
-        private RadioButton decimal_sist;
-        private TextBox primerOperador;
-        private TextBox segundoOperador;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Button operar;
-        private Button cerrar;
-        private Button limpiar;
-        private ComboBox operacion;
+        private Label lblPrimerOperador;
+        private Label lblSegundoOperador;
+        private Label lblOperacion;
+        private TextBox txtPrimerOperando;
+        private TextBox txtSegundoOperando;
+        private ComboBox cmbOperacion;
+        private Button btnOperar;
+        private Button btnLimpiar;
+        private Button btnCerrar;
+        private Label lblResultado;
+        private GroupBox grpSistema;
+        private RadioButton rdbBinario;
+        private RadioButton rdbDecimal;
+        private ListBox lstHistorial;
+        private RadioButton rdbOctal;
     }
 }

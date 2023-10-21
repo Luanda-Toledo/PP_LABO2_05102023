@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class SistemaDecimal : Numeracion
+    public class SistemaDecimal : Numeracion
     {
-        public SistemaDecimal(string valorInicial) : base(valorInicial)
+        public SistemaDecimal(string valor) : base(valor)
         {
         }
 
@@ -16,58 +16,99 @@ namespace Entidades
         {
             get
             {
-                // Devuelve el valor de la nueva instancia en binario
-                SistemaBinario sistemaDecimal = new SistemaBinario(valor);
-                return sistemaDecimal.ValorNumerico;
+                return (double)this;
             }
         }
 
+        /// <summary>
+        /// Cambia el sistema de numeración de la instancia actual a uno nuevo especificado.
+        /// </summary>
+        /// <param name="nuevoSistema">El nuevo sistema de numeración al que se desea convertir la instancia.</param>
+        /// <returns>Una nueva instancia de la clase Numeracion en el sistema de numeración especificado.</returns>
         public override Numeracion CambiarSistemaDeNumeracion(ESistema nuevoSistema)
         {
-            if (nuevoSistema == ESistema.Binario)
+            switch (nuevoSistema)
             {
-                // Implementa la lógica de conversión a binario aquí
-                return new SistemaBinario(DecimalABinario());
+                case ESistema.Binario:
+                    return this.DecimalABinario();
+                case ESistema.Octal:
+                    return this.DecimalAOctal();
+                default:
+                    return this;
             }
         }
 
-        // Método para verificar si la cadena es una numeración válida en sistema decimal
-        protected bool EsNumeracionValida(string valor)
+        /// <summary>
+        /// Verifica si una cadena es una numeración válida en el sistema de numeración decimal.
+        /// </summary>
+        /// <param name="valor">La cadena que se va a verificar.</param>
+        /// <returns>
+        /// True si la cadena es una numeración válida en el sistema de numeración decimal; de lo contrario, False.
+        /// La validación se basa en comprobar que la cadena no sea nula o contenga solo espacios en blanco y sea un valor válido en el sistema decimal.
+        /// </returns>
+        protected override bool EsNumeracionValida(string valor)
         {
-           if (EsSistemaDecimalValido(valor))
-           {
-                return true;
-           }
-   
-            return false;
+           return base.EsNumeracionValida(valor) && this.EsSistemaDecimalValido(valor);
         }
 
+        /// <summary>
+        /// Verifica si una cadena es un valor válido en el sistema de numeración decimal.
+        /// </summary>
+        /// <param name="valor">La cadena que se va a verificar.</param>
+        /// <returns>True si la cadena es un valor válido en el sistema de numeración decimal; de lo contrario, False.</returns>
         private bool EsSistemaDecimalValido(string valor)
         {
-            double resultado;
-            return double.TryParse(valor, out resultado);
+            return double.TryParse(valor, out double resultado);
         }
 
-        private SistemaBinario DecimalABinario(int valorDecimal)
+        /// <summary>
+        /// Convierte el valor numérico de la instancia actual al sistema de numeración binario.
+        /// </summary>
+        /// <returns>
+        /// Una instancia de la clase SistemaBinario que representa el valor numérico convertido al sistema de numeración binario, 
+        /// o un mensaje de error en caso de que el valor numérico sea igual a cero.
+        /// </returns>
+        internal SistemaBinario DecimalABinario()
         {
-            if (double.TryParse(valorDecimal, out double numeroDecimal))
-            {
-                // Verificar si el número es positivo y un entero
-                if (numeroDecimal >= 0 && (int)numeroDecimal == numeroDecimal)
-                {
-                    // Tomar el valor entero
-                    int numeroEntero = (int)numeroDecimal;
+            int valor = (int)this.ValorNumerico;
 
-                    // Convertir a binario manualmente
-                    string binario = string.Empty;
-                    while (numeroEntero > 0)
-                    {
-                        binario = (numeroEntero % 2) + binario;
-                        numeroEntero /= 2;
-                    }
-                    return binario;
+            if (valor == 0)
+            {
+                string binario = string.Empty;
+                while (valor > 0)
+                {
+                    binario = (valor % 2) + binario;
+                    valor /= 2;
                 }
+                return binario;
             }
+
+            return Numeracion.msgError;
+        }
+
+        /// <summary>
+        /// Convierte el valor numérico de la instancia actual al sistema de numeración octal.
+        /// </summary>
+        /// <returns>
+        /// Una instancia de la clase SistemaOctal que representa el valor numérico convertido al sistema de numeración octal, 
+        /// o un mensaje de error en caso de que el valor numérico sea igual a cero.
+        /// </returns>
+        public SistemaOctal DecimalAOctal()
+        {
+            int valor = (int)this.ValorNumerico;
+
+            if (valor == 0)
+            {
+                string octal = string.Empty;
+                while (valor > 0)
+                {
+                    octal = (valor % 8) + octal;
+                    valor /= 8;
+                }
+                return octal;
+            }
+
+            return Numeracion.msgError;
         }
 
         // Conversiónes implicitas

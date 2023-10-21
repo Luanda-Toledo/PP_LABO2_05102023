@@ -3,39 +3,25 @@ using System.Drawing;
 
 namespace Entidades
 {
-    public enum ESistema {Decimal, Binario};
-
     public abstract class Numeracion
     {
-        // Atributos protegidos
-        protected string msgError;
+        // Atributos
+        protected static string msgError;
         protected string valor;
-        protected ESistema sistema;
-        private string valorInicial;
 
-        static Numeracion() 
+        static Numeracion()
         {
-            string msgError = "Numero Invalido";
+            Numeracion.msgError = "Numero Invalido";
         }
 
-        // Constructor protegido que llama a inicializaValor
-        protected Numeracion(string valorInicial, ESistema sistema)
+        protected Numeracion(string valor)
         {
-            this.sistema = sistema;
-            InicializaValor(valorInicial);
-        }
-
-        protected Numeracion(string valorInicial)
-        {
-            this.valorInicial = valorInicial;
+            this.InicializaValor(valor);
         }
 
         public string Valor
         {
-            get
-            {
-                return valor;
-            }
+            get { return this.valor; }
         }
 
         internal abstract double ValorNumerico
@@ -43,74 +29,39 @@ namespace Entidades
             get;
         }
 
-        public ESistema Sistema 
-        { 
-            get 
-            { 
-                return sistema; 
-            } 
-            set 
-            { 
-                sistema = value; 
-            }
-        }
-
-
-        // Inicializar el valor y validar
-        private void InicializaValor(string valorInicial)
+        /// <summary>
+        /// Da un estado inicial al atributo valor
+        /// Si el valor proporcionado es válido, se asigna a la propiedad "valor". 
+        /// Si el valor no es válido, se asigna un mensaje de error predeterminado.
+        /// </summary>
+        /// <param name="valor">El valor que se va a asignar a la propiedad "valor". Debe ser una numeración válida.</param>
+        private void InicializaValor(string valor)
         {
-            if (EsNumeracionValida(valorInicial))
+            if (this.EsNumeracionValida(valor))
             {
-                valor = valorInicial;
+                this.valor = valor;
             }
             else
             {
-                valor = msgError;
+                this.valor = Numeracion.msgError;
             }
         }
 
-        public abstract void CambiarSistemaDeNumeracion(ESistema sistemaSeleccionado);
+        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistemaSeleccionado);
 
         /// <summary>
-        /// Verifica si la cadena de valor no es nula ni contiene solo espacios en blanco.
+        /// Verifica si una cadena no es nula ni contiene solo espacios en blanco.
         /// </summary>
-        /// <returns>true si la cadena es válida sino false.</returns>
-        protected bool EsNumeracionValida(string valor)
+        /// <param name="valor">La cadena que se va a verificar.</param>
+        /// <returns>True si la cadena no es nula y contiene al menos un carácter diferente de un espacio en blanco; de lo contrario, False.</returns>        
+        protected virtual bool EsNumeracionValida(string valor)
         {
-            if (valor != null)
-            {
-                bool contieneCaracterNoEspacio = false;
-
-                foreach (char c in valor)
-                {
-                    if (c != ' ')
-                    {
-                        contieneCaracterNoEspacio = true;
-                        break;
-                    }
-                }
-
-                return contieneCaracterNoEspacio;
-            }
-            else
-            {
-                return false;
-            }
+            return !string.IsNullOrWhiteSpace(valor);
         }
 
         public static bool operator ==(Numeracion numUno, Numeracion numDos)
         {
-            if ((object)numUno == null && (object)numDos == null)
-            {
-                return true; // Ambos son nulos, considerados iguales.
-            }
-
-            if ((object)numUno == null || (object)numDos == null)
-            {
-                return false; // Uno es nulo, el otro no, considerados diferentes.
-            }
-
-            return numUno.sistema == numDos.sistema;
+            return numUno is not null && numDos is not null && numUno.GetType() == numDos.GetType();
         }
 
         public static bool operator !=(Numeracion numUno, Numeracion numDos)
@@ -120,11 +71,8 @@ namespace Entidades
 
         public static explicit operator double(Numeracion num)
         {
-            if (double.TryParse(num.valor, out double resultado))
-            {
-                return resultado;
-            }
-
+            double.TryParse(num.valor, out double resultado);
+            return resultado;
         }
     }
 }

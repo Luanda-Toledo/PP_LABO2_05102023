@@ -13,174 +13,130 @@ namespace Entidades
         private string nombreAlumno;
         private List<string> operaciones;
         private Numeracion resultado;
-        private static ESistema sistema = ESistema.Decimal;
-        private char v;
-        private char operador;
+        private static ESistema sistema;
 
-        public string NombreAlumno
-        {
-            get 
-            {
-                return nombreAlumno; 
-            }
-            set 
-            {
-                nombreAlumno = value;
-            }
-        }
 
-        public List<string> Operaciones
+        static Calculadora()
         {
-            get 
-            {
-                return operaciones;
-            }
-        }
-
-        public Numeracion Resultado
-        {
-            get
-            {
-                return resultado;
-            }
-        }
-
-        public Numeracion PrimerOperando
-        {
-            get
-            {
-                return primerOperando;
-            }
-            set
-            {
-                primerOperando = value;
-            }
-        }
-
-        public Numeracion SegundoOperando
-        {
-            get
-            {
-                return segundoOperando;
-            }
-            set
-            {
-                segundoOperando = value;
-            }
-        }
-
-        public ESistema Sistema
-        {
-            get
-            {
-                return sistema;
-            }
-            set
-            {
-                sistema = value;
-            }
-        }
-
-        public Calculadora(Numeracion primerOperando, Numeracion segundoOperando, Numeracion resultado)
-        {
-            this.primerOperando = primerOperando;
-            this.segundoOperando = segundoOperando;
-            this.resultado = resultado;
+            Calculadora.sistema = ESistema.Decimal;
         }
 
         public Calculadora()
         {
-            operaciones = new List<string>();
+            this.operaciones  = new List<string>();
         }
 
-        public Calculadora(string nombreAlumno) : this()
+        public Calculadora(string nombreAlumno):this() 
         {
             this.nombreAlumno = nombreAlumno;
         }
 
-        public Calculadora(char v, char operador)
+        public string NombreAlumno
         {
-            this.v = v;
-            this.operador = operador;
+            get { return nombreAlumno; }
+            set { nombreAlumno = value; }
         }
 
-        public void AsignarOperandos(Numeracion operandoUno, Numeracion operandoDos)
+        public List<string> Operaciones
         {
-            primerOperando = operandoUno;
-            segundoOperando = operandoDos;
+            get { return operaciones; }
         }
 
+        public Numeracion Resultado
+        {
+            get { return resultado; }
+        }
+
+        public Numeracion PrimerOperando
+        {
+            get { return primerOperando; }
+            set { primerOperando = value; }
+        }
+
+        public Numeracion SegundoOperando
+        {
+            get { return segundoOperando; }
+            set { segundoOperando = value; }
+        }
+
+        public static ESistema Sistema
+        {
+            get { return sistema; }
+            set { sistema = value; }
+        }
+
+        /// <summary>
+        /// Realiza una operación matemática en función del operador especificado y actualiza el resultado.
+        /// </summary>
+        /// <param name="operador">El operador matemático (+, -, *, /) que se utilizará en la operación.</param>
         public void Calcular(char operador)
         {
-            if (primerOperando != null && segundoOperando != null)
+            double resultado = double.MinValue;
+
+            if (this.primerOperando == this.segundoOperando)
             {
-                if (primerOperando.Sistema == segundoOperando.Sistema)
+                switch (operador) 
                 {
-                    switch (operador)
-                    {
-                        case '+':
-                            resultado = primerOperando + segundoOperando;
-                            break;
-                        case '-':
-                            resultado = primerOperando - segundoOperando;
-                            break;
-                        case '*':
-                            resultado = primerOperando * segundoOperando;
-                            break;
-                        case '/':
-                            resultado = primerOperando / segundoOperando;
-                            break;
-                        default:
-                            resultado = primerOperando + segundoOperando;
-                            break;
-                    }
+                    case '-':
+                        resultado = this.primerOperando.ValorNumerico - this.segundoOperando.ValorNumerico;
+                        break;
+
+                    case '*':
+                        resultado = this.primerOperando.ValorNumerico * this.segundoOperando.ValorNumerico;
+                        break;
+
+                    case '/':
+                        resultado = this.primerOperando.ValorNumerico / this.segundoOperando.ValorNumerico;
+                        break;
+
+                    default:
+                        resultado = this.primerOperando.ValorNumerico + this.segundoOperando.ValorNumerico;
+                        break;
                 }
-                else
-                {
-                    resultado = new SistemaDecimal(double.MinValue.ToString());
-                }
-            }
-            else
-            {
-                resultado = new SistemaDecimal(double.MinValue.ToString());
             }
 
-            string historial = ActualizaHistorialDeOperaciones(operador);
-            operaciones.Add(historial);
+            this.resultado = this.MapeaResultado(resultado);
         }
 
+        /// <summary>
+        /// Realiza una operación de suma (por defecto) utilizando los operandos actuales y actualiza el resultado.
+        /// </summary>
         public void Calcular()
         {
-            Calcular('+'); 
+            this.Calcular('+'); 
         }
 
-        public Numeracion MapeaResultado()
+        /// <summary>
+        /// Realiza un mapeo del valor numérico especificado a una instancia de la clase Numeracion
+        /// y cambia su sistema de numeración al sistema actual de la calculadora.
+        /// </summary>
+        /// <param name="valor">El valor numérico que se mapeará y cambiará de sistema de numeración.</param>
+        /// <returns>
+        /// Una instancia de la clase Numeracion que representa el valor mapeado al sistema de numeración actual de la calculadora.
+        /// </returns>
+        private Numeracion MapeaResultado(double valor)
         {
-            switch (sistema)
-            {
-                case ESistema.Decimal:
-                    return new SistemaDecimal(resultado.Valor);
-                case ESistema.Binario:
-                    return new SistemaBinario(resultado.Valor);
-                default:
-                    return new SistemaDecimal(resultado.Valor); 
-            }
+            Numeracion resultado = (SistemaDecimal)valor.ToString();
+            return resultado.CambiarSistemaDeNumeracion(Calculadora.sistema);
         }
 
-        public string ActualizaHistorialDeOperaciones(char operador)
+        /// <summary>
+        /// Actualiza el historial de operaciones de la calculadora con la última operación realizada.
+        /// </summary>
+        /// <param name="operador">El operador matemático (+, -, *, /) utilizado en la operación.</param>
+        public void ActualizaHistorialDeOperaciones(char operador)
         {
             StringBuilder historial = new StringBuilder();
-            historial.Append($"Sistema: {sistema}\n");
-            historial.Append($"Primer Operando: {primerOperando.Valor}\n");
-            historial.Append($"Segundo Operando: {segundoOperando.Valor}\n");
-            historial.Append($"Operador: {operador}\n");
-
-            return historial.ToString();
+            historial.Append($"[{Calculadora.Sistema}] => {this.primerOperando.Valor} {operador} {this.segundoOperando.Valor} = {this.resultado.Valor}");
+            this.operaciones.Add(historial.ToString());
         }
 
+        /// <summary>
+        /// Elimina todas las operaciones del historial de la calculadora.
+        /// </summary>
         public void EliminarHistorialDeOperaciones()
         {
-            operaciones.Clear();
+            this.operaciones.Clear();
         }
     }
 }

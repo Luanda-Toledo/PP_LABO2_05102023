@@ -118,378 +118,417 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="resultado.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblPrimerOperador.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="resultado.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 20.25pt, style=Bold, Italic, Underline</value>
+  <data name="lblPrimerOperador.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 12pt</value>
   </data>
-  <data name="resultado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 9</value>
+  <data name="lblPrimerOperador.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 314</value>
   </data>
-  <data name="resultado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 35</value>
+  <data name="lblPrimerOperador.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 21</value>
   </data>
-  <data name="resultado.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblPrimerOperador.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="resultado.Text" xml:space="preserve">
-    <value>RESULTADO:</value>
+  <data name="lblPrimerOperador.Text" xml:space="preserve">
+    <value>Primer operador:</value>
   </data>
-  <data name="&gt;&gt;resultado.Name" xml:space="preserve">
-    <value>resultado</value>
+  <data name="&gt;&gt;lblPrimerOperador.Name" xml:space="preserve">
+    <value>lblPrimerOperador</value>
   </data>
-  <data name="&gt;&gt;resultado.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblPrimerOperador.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;resultado.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblPrimerOperador.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;resultado.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblPrimerOperador.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblSegundoOperador.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSegundoOperador.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 12pt</value>
+  </data>
+  <data name="lblSegundoOperador.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 314</value>
+  </data>
+  <data name="lblSegundoOperador.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 21</value>
+  </data>
+  <data name="lblSegundoOperador.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSegundoOperador.Text" xml:space="preserve">
+    <value>Segundo operador:</value>
+  </data>
+  <data name="&gt;&gt;lblSegundoOperador.Name" xml:space="preserve">
+    <value>lblSegundoOperador</value>
+  </data>
+  <data name="&gt;&gt;lblSegundoOperador.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSegundoOperador.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSegundoOperador.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tipoSistema.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="binario_sist.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblOperacion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="binario_sist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 45</value>
+  <data name="lblOperacion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 12pt</value>
   </data>
-  <data name="binario_sist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 23</value>
+  <data name="lblOperacion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>253, 311</value>
   </data>
-  <data name="binario_sist.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblOperacion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 21</value>
   </data>
-  <data name="binario_sist.Text" xml:space="preserve">
-    <value>Binario</value>
-  </data>
-  <data name="&gt;&gt;binario_sist.Name" xml:space="preserve">
-    <value>binario_sist</value>
-  </data>
-  <data name="&gt;&gt;binario_sist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;binario_sist.Parent" xml:space="preserve">
-    <value>tipoSistema</value>
-  </data>
-  <data name="&gt;&gt;binario_sist.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="decimal_sist.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="decimal_sist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="decimal_sist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 45</value>
-  </data>
-  <data name="decimal_sist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 23</value>
-  </data>
-  <data name="decimal_sist.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="decimal_sist.Text" xml:space="preserve">
-    <value>Decimal</value>
-  </data>
-  <data name="&gt;&gt;decimal_sist.Name" xml:space="preserve">
-    <value>decimal_sist</value>
-  </data>
-  <data name="&gt;&gt;decimal_sist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;decimal_sist.Parent" xml:space="preserve">
-    <value>tipoSistema</value>
-  </data>
-  <data name="&gt;&gt;decimal_sist.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tipoSistema.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="tipoSistema.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 102</value>
-  </data>
-  <data name="tipoSistema.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="tipoSistema.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 100</value>
-  </data>
-  <data name="tipoSistema.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblOperacion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="tipoSistema.Text" xml:space="preserve">
-    <value>Representar resultado en:</value>
+  <data name="lblOperacion.Text" xml:space="preserve">
+    <value>Operacion:</value>
   </data>
-  <data name="&gt;&gt;tipoSistema.Name" xml:space="preserve">
-    <value>tipoSistema</value>
+  <data name="&gt;&gt;lblOperacion.Name" xml:space="preserve">
+    <value>lblOperacion</value>
   </data>
-  <data name="&gt;&gt;tipoSistema.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblOperacion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tipoSistema.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblOperacion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tipoSistema.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblOperacion.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="primerOperador.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 263</value>
+  <data name="txtPrimerOperando.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
   </data>
-  <data name="primerOperador.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 23</value>
+  <data name="txtPrimerOperando.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 338</value>
   </data>
-  <data name="primerOperador.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="txtPrimerOperando.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 35</value>
   </data>
-  <data name="&gt;&gt;primerOperador.Name" xml:space="preserve">
-    <value>primerOperador</value>
+  <data name="txtPrimerOperando.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;primerOperador.Type" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtPrimerOperando.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtPrimerOperando.Name" xml:space="preserve">
+    <value>txtPrimerOperando</value>
+  </data>
+  <data name="&gt;&gt;txtPrimerOperando.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;primerOperador.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtPrimerOperando.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;primerOperador.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtPrimerOperando.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="segundoOperador.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 263</value>
+  <data name="txtSegundoOperando.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
   </data>
-  <data name="segundoOperador.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 23</value>
+  <data name="txtSegundoOperando.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 335</value>
   </data>
-  <data name="segundoOperador.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="txtSegundoOperando.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 35</value>
   </data>
-  <data name="&gt;&gt;segundoOperador.Name" xml:space="preserve">
-    <value>segundoOperador</value>
+  <data name="txtSegundoOperando.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;segundoOperador.Type" xml:space="preserve">
+  <data name="txtSegundoOperando.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtSegundoOperando.Name" xml:space="preserve">
+    <value>txtSegundoOperando</value>
+  </data>
+  <data name="&gt;&gt;txtSegundoOperando.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;segundoOperador.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtSegundoOperando.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;segundoOperador.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtSegundoOperando.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="cmbOperacion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+  <data name="cmbOperacion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>253, 335</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 243</value>
+  <data name="cmbOperacion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 38</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Segundo operador</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 243</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Primer operador</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 230</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Operacion</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="operar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="operar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 351</value>
-  </data>
-  <data name="operar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 44</value>
-  </data>
-  <data name="operar.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="operar.Text" xml:space="preserve">
-    <value>OPERAR</value>
-  </data>
-  <data name="&gt;&gt;operar.Name" xml:space="preserve">
-    <value>operar</value>
-  </data>
-  <data name="&gt;&gt;operar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;operar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;operar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cerrar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="cerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 351</value>
-  </data>
-  <data name="cerrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 44</value>
-  </data>
-  <data name="cerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cerrar.Text" xml:space="preserve">
-    <value>CERRAR</value>
-  </data>
-  <data name="&gt;&gt;cerrar.Name" xml:space="preserve">
-    <value>cerrar</value>
-  </data>
-  <data name="&gt;&gt;cerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cerrar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cerrar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="limpiar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt, style=Bold</value>
-  </data>
-  <data name="limpiar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="limpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 351</value>
-  </data>
-  <data name="limpiar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 44</value>
-  </data>
-  <data name="limpiar.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="limpiar.Text" xml:space="preserve">
-    <value>LIMPIAR</value>
-  </data>
-  <data name="&gt;&gt;limpiar.Name" xml:space="preserve">
-    <value>limpiar</value>
-  </data>
-  <data name="&gt;&gt;limpiar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;limpiar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;limpiar.ZOrder" xml:space="preserve">
+  <data name="cmbOperacion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="operacion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe Script, 15.75pt, style=Bold</value>
+  <data name="&gt;&gt;cmbOperacion.Name" xml:space="preserve">
+    <value>cmbOperacion</value>
   </data>
-  <data name="operacion.Items" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="operacion.Items1" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="operacion.Items2" xml:space="preserve">
-    <value>/</value>
-  </data>
-  <data name="operacion.Items3" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="operacion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 251</value>
-  </data>
-  <data name="operacion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 42</value>
-  </data>
-  <data name="operacion.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;operacion.Name" xml:space="preserve">
-    <value>operacion</value>
-  </data>
-  <data name="&gt;&gt;operacion.Type" xml:space="preserve">
+  <data name="&gt;&gt;cmbOperacion.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;operacion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cmbOperacion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;operacion.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cmbOperacion.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnOperar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 9.75pt</value>
+  </data>
+  <data name="btnOperar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 397</value>
+  </data>
+  <data name="btnOperar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 38</value>
+  </data>
+  <data name="btnOperar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnOperar.Text" xml:space="preserve">
+    <value>OPERAR</value>
+  </data>
+  <data name="&gt;&gt;btnOperar.Name" xml:space="preserve">
+    <value>btnOperar</value>
+  </data>
+  <data name="&gt;&gt;btnOperar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOperar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOperar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnLimpiar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 9.75pt</value>
+  </data>
+  <data name="btnLimpiar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>253, 397</value>
+  </data>
+  <data name="btnLimpiar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 38</value>
+  </data>
+  <data name="btnLimpiar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnLimpiar.Text" xml:space="preserve">
+    <value>LIMPIAR</value>
+  </data>
+  <data name="&gt;&gt;btnLimpiar.Name" xml:space="preserve">
+    <value>btnLimpiar</value>
+  </data>
+  <data name="&gt;&gt;btnLimpiar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLimpiar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLimpiar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnCerrar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 9.75pt</value>
+  </data>
+  <data name="btnCerrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 397</value>
+  </data>
+  <data name="btnCerrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnCerrar.Text" xml:space="preserve">
+    <value>CERRAR</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Name" xml:space="preserve">
+    <value>btnCerrar</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCerrar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblResultado.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblResultado.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Franklin Gothic Medium, 24pt, style=Bold</value>
+  </data>
+  <data name="lblResultado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 32</value>
+  </data>
+  <data name="lblResultado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 37</value>
+  </data>
+  <data name="lblResultado.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblResultado.Text" xml:space="preserve">
+    <value>RESULTADO:</value>
+  </data>
+  <data name="&gt;&gt;lblResultado.Name" xml:space="preserve">
+    <value>lblResultado</value>
+  </data>
+  <data name="&gt;&gt;lblResultado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblResultado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblResultado.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rdbOctal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbOctal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 57</value>
+  </data>
+  <data name="rdbOctal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 21</value>
+  </data>
+  <data name="rdbOctal.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="rdbOctal.Text" xml:space="preserve">
+    <value>Octal</value>
+  </data>
+  <data name="&gt;&gt;rdbOctal.Name" xml:space="preserve">
+    <value>rdbOctal</value>
+  </data>
+  <data name="&gt;&gt;rdbOctal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbOctal.Parent" xml:space="preserve">
+    <value>grpSistema</value>
+  </data>
+  <data name="&gt;&gt;rdbOctal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdbBinario.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbBinario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 57</value>
+  </data>
+  <data name="rdbBinario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 21</value>
+  </data>
+  <data name="rdbBinario.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="rdbBinario.Text" xml:space="preserve">
+    <value>Binario</value>
+  </data>
+  <data name="&gt;&gt;rdbBinario.Name" xml:space="preserve">
+    <value>rdbBinario</value>
+  </data>
+  <data name="&gt;&gt;rdbBinario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbBinario.Parent" xml:space="preserve">
+    <value>grpSistema</value>
+  </data>
+  <data name="&gt;&gt;rdbBinario.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdbDecimal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbDecimal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 57</value>
+  </data>
+  <data name="rdbDecimal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="rdbDecimal.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="rdbDecimal.Text" xml:space="preserve">
+    <value>Decimal</value>
+  </data>
+  <data name="&gt;&gt;rdbDecimal.Name" xml:space="preserve">
+    <value>rdbDecimal</value>
+  </data>
+  <data name="&gt;&gt;rdbDecimal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbDecimal.Parent" xml:space="preserve">
+    <value>grpSistema</value>
+  </data>
+  <data name="&gt;&gt;rdbDecimal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grpSistema.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="grpSistema.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 156</value>
+  </data>
+  <data name="grpSistema.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 117</value>
+  </data>
+  <data name="grpSistema.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="grpSistema.Text" xml:space="preserve">
+    <value>Representar resultado en:</value>
+  </data>
+  <data name="&gt;&gt;grpSistema.Name" xml:space="preserve">
+    <value>grpSistema</value>
+  </data>
+  <data name="&gt;&gt;grpSistema.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSistema.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpSistema.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lstHistorial.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lstHistorial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>572, 62</value>
+  </data>
+  <data name="lstHistorial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 394</value>
+  </data>
+  <data name="lstHistorial.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lstHistorial.Name" xml:space="preserve">
+    <value>lstHistorial</value>
+  </data>
+  <data name="&gt;&gt;lstHistorial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lstHistorial.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lstHistorial.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -498,17 +537,14 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>660, 450</value>
+    <value>998, 518</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Calculadora_Luanda_Toledo</value>
+    <value>Calculadora Alumno: Nombre y Apellido</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmCalculadora</value>

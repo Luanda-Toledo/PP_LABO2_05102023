@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Calculadora_Basica",
-    "\\Entidades\\obj\\Debug"
+    "\\Entidades"
   ],
-  "SelectedNode": "\\Calculadora_Basica.sln",
+  "SelectedNode": "\\Calculadora_Basica\\FrmCalculadora.cs",
   "PreviewInSolutionExplorer": false
 }
